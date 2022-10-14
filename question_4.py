@@ -3,22 +3,25 @@
 # 4. Implement a Banking Account
 
 class account:
-    def __init__(self , title = None , balance = 0):
-        self.title = "Ashish"
-        self.balance = 5000
+    def __init__(self , title , balance):
+        self.title = title
+        self.balance = balance
 
     def display(self):
         print("(" , self.title , "," , self.balance , ")")
 
 class savingsaccount(account):
-    def __init__(self , title = None , balance = 0 , interestrate = 0):
+    def __init__(self , title , balance , interestrate):
         super().__init__(title , balance)
-        self.interestrate = 5
+        self.interestrate = interestrate
 
     def display(self):
         print("(" , self.title , "," , self.balance , "," , self.interestrate , ")")
 
-account_obj = account()
+title = input("Enter your name :")
+balance = int(input("Enter your account balance :"))
+interestrate = int(input("Enter interestrate :"))
+account_obj = account(title , balance)
 account_obj.display()
-savingsaccount_obj = savingsaccount()
+savingsaccount_obj = savingsaccount(title , balance , interestrate)
 savingsaccount_obj.display()
