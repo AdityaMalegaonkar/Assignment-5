@@ -8,7 +8,7 @@ class account:
         self.balance = balance
 
     def display(self):
-        print("(" , self.title , "," , self.balance , ")")
+        return f"({self.title} , {self.balance})"
 
 class savingsaccount(account):
     def __init__(self , title , balance , interestrate):
@@ -16,12 +16,12 @@ class savingsaccount(account):
         self.interestrate = interestrate
 
     def display(self):
-        print("(" , self.title , "," , self.balance , "," , self.interestrate , ")")
+        return f"({self.title} , {self.balance} , {self.interestrate})"
 
 title = input("Enter your name :")
 balance = int(input("Enter your account balance :"))
 interestrate = int(input("Enter interestrate :"))
 account_obj = account(title , balance)
-account_obj.display()
+print(account_obj.display())
 savingsaccount_obj = savingsaccount(title , balance , interestrate)
-savingsaccount_obj.display()
+print(savingsaccount_obj.display())
